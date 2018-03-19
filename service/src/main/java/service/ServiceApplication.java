@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
+@Deprecated
 public class ServiceApplication {
 
     @GetMapping("/service")

@@ -2,7 +2,7 @@
  * sf.gmq.net
  * Copyright (C) 2012-2018 All Rights Reserved.
  */
-package controller;
+package controller.clients;
 
 import entity.UserDO;
 import org.slf4j.Logger;
@@ -19,18 +19,18 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 用户控制器
+ * 用户控制器(客户端)
  *
  * @author guominqiang
- * @version $Id UserController.java, v 0.1 2018-03-19 15:09 guominqiang Exp $$
+ * @version $Id UserClientController.java, v 0.1 2018-03-19 15:09 guominqiang Exp $$
  */
 @RestController
-public class UserController {
+public class UserClientController {
 
     /**
      * 日志打印
      **/
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserClientController.class);
 
 
     private static final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

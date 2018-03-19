@@ -1,6 +1,6 @@
 /**
- * com.gmq.tech.com
- * Copyright (C) 2004-2018 All Rights Reserved.
+ * sf.gmq.net
+ * Copyright (C) 2012-2018 All Rights Reserved.
  */
 package discovery;
 
@@ -9,17 +9,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * 建立注册中心
+ * 单点eureka server 启动类
  *
- * @author gmq
- * @version $Id DiscoveryApplication.java, v 0.1 2018-03-18 22:09 gmq Exp $$
+ * @author guominqiang
+ * @version $Id SpEurekaServerApplication.java, v 0.1 2018-03-19 19:21 guominqiang Exp $$
  */
 @SpringBootApplication
 @EnableEurekaServer
-@Deprecated
-public class DiscoveryApplication {
+public class SpEurekaServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DiscoveryApplication.class, args);
+        SpringApplication.run(SpEurekaServerApplication.class, args);
     }
 }

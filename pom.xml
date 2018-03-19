@@ -42,6 +42,19 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.5.RELEASE</version>
     </parent>
+    <properties>
+        <!-- 使用SpringBoot实现服务提供者,服务注册 -->
+        <!--<start-class>discovery.SpUserServiceMasterApplication</start-class>-->
+
+        <!-- 使用SpringBoot实现服务消费者 -->
+        <!--<start-class>discovery.SpConsumerH5Application</start-class>-->
+
+        <!-- 使用Eureka实现服务发现组件 -->
+        <!--<start-class>discovery.SpEurekaServerApplication</start-class>-->
+
+        <!-- 使用Ribbon实现客户端负载均衡 -->
+        <start-class>discovery.SpH5RibbonHystrixApplication</start-class>
+    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -59,9 +72,28 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <!-- eureka client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!--hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
+        <!--jpa -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Eureka Server实现安全验证 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <!--xml解析-->
@@ -252,6 +284,26 @@
             <version>3.1.11</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
